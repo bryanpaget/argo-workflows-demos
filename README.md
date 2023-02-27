@@ -128,7 +128,7 @@ result = flip_coin()
 couler.when(couler.equal(result, "heads"), lambda: heads())
 couler.when(couler.equal(result, "tails"), lambda: tails())
 
-submitter = ArgoSubmitter(namespace="jose-test")
+submitter = ArgoSubmitter(namespace=NAMESPACE)
 result = couler.run(submitter=submitter)
 
 print(json.dumps(result, indent=2))
