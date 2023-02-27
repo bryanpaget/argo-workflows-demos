@@ -4,6 +4,12 @@ _Demo Jupyter Notebooks for Argo Workflows_
 
 ## Introduction
 
+Introducing the Argo Workflows Demos - a collection of Jupyter Notebooks showcasing the power and simplicity of using Argo Workflows for complex workflow orchestration in cloud-native environments. With the help of Hera and Couler, two Python SDKs for Argo Workflows, building and submitting workflows has never been easier.
+
+Hera abstracts away technical details, providing a consistent set of concepts and terminology, making complex workflows accessible to a wider audience. Couler, on the other hand, offers a unified interface for constructing and managing workflows on various workflow engines, including Argo Workflows, Tekton Pipelines, and Apache Airflow. Its extensibility, automatic optimizations, and reusable steps make it a powerful tool for streamlining the workflow creation process.
+
+Explore our collection of Jupyter Notebooks and get inspired to build and manage your own complex workflows with ease!
+
 ### Hera 
 
 Hera is a Python software development kit (SDK) for Argo Workflows. Argo Workflows is a tool used for orchestrating and managing complex workflows in cloud-native environments.
