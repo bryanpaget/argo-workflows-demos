@@ -26,14 +26,14 @@ Couler is designed to be extensible, meaning it can work with various different 
 
 If you are on the `aaw-dev` cluster you'll need to first specify the correct URL for `pip` to find and install `hera-workflows`.
 
-```{bash}
+```bash
 !pip config --user set global.index-url https://jfrog.aaw.cloud.statcan.ca/artifactory/api/pypi/pypi-remote/simple
 !pip install hera-workflows
 ```
 
 Next import Hera and give it your credentials:
 
-```{python}
+```python
 import hera
 
 hera.global_config.GlobalConfig.token = "<your-argo-workflows-token>"
@@ -44,7 +44,7 @@ hera.global_config.GlobalConfig.service_account_name = "<your-kubeflow-profile>"
 
 From here you should be able to run an example workflow:
 
-```{python}
+```python
 from hera import Task, Workflow
 
 
