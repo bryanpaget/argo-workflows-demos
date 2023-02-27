@@ -133,3 +133,7 @@ result = couler.run(submitter=submitter)
 
 print(json.dumps(result, indent=2))
 ```
+
+## Viewing Your Workflow
+
+Regardless of which workflow interface you choose to use, the job is submitted as an Argo Workflows workflow. Your workflows can be viewed from the Argo Workflows  web interface located at https://argo-workflows.aaw-dev.cloud.statcan.ca/.
