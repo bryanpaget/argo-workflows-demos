@@ -76,3 +76,60 @@ More information about Hera can be found on [Github](https://github.com/argoproj
 
 
 ### Couler
+
+
+If you are on the `aaw-dev` cluster you'll need to first specify the correct URL for `pip` to find and install `couler`.
+
+```bash
+!pip config --user set global.index-url https://jfrog.aaw.cloud.statcan.ca/artifactory/api/pypi/pypi-remote/simple
+!python3 -m pip install git+https://github.com/couler-proj/couler --ignore-installed
+```
+
+Then import Couler as below and provide your namespace:
+
+```python
+import json
+import random
+
+import couler.argo as couler
+from couler.argo_submitter import ArgoSubmitter
+
+
+NAMESPACE = "<your-kubeflow-namespace>"
+```
+
+Then you should be able to run an example workflow:
+
+```python
+def random_code():
+    import random
+    res = "heads" if random.randint(0, 1) == 0 else "tails"
+    print(res)
+
+
+def flip_coin():
+    return couler.run_script(image="python:alpine3.6", source=random_code)
+
+
+def heads():
+    return couler.run_container(
+        image="alpine:3.6", command=["sh", "-c", 'echo "it was heads"']
+    )
+
+
+def tails():
+    return couler.run_container(
+        image="alpine:3.6", command=["sh", "-c", 'echo "it was tails"']
+    )
+
+
+result = flip_coin()
+
+couler.when(couler.equal(result, "heads"), lambda: heads())
+couler.when(couler.equal(result, "tails"), lambda: tails())
+
+submitter = ArgoSubmitter(namespace="jose-test")
+result = couler.run(submitter=submitter)
+
+print(json.dumps(result, indent=2))
+```
