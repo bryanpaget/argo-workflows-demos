@@ -139,4 +139,5 @@ print(json.dumps(result, indent=2))
 Regardless of which workflow interface you choose to use, the job is submitted as an Argo Workflows workflow. Your workflows can be viewed from the Argo Workflows  web interface located at https://argo-workflows.aaw-dev.cloud.statcan.ca/.
 
 ![image](https://user-images.githubusercontent.com/8212170/221681210-016dccbf-eb07-4977-b7ff-a3f1643257e3.png)
+![image](https://user-images.githubusercontent.com/8212170/221681409-4dd1e723-eff4-4e9a-aed9-955ce1b61efb.png)
 
