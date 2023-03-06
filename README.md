@@ -1,12 +1,12 @@
-# Argo Workflows Demos
+# Example Argo Workflows Jupyter Notebooks
 
-_Demo Jupyter Notebooks for Argo Workflows_
+_ Use these notebooks to get started with simple APIs for Argo Workflows_
 
 ## Introduction
 
 Introducing the Argo Workflows Demos - a collection of Jupyter Notebooks showcasing the power and simplicity of using Argo Workflows for complex workflow orchestration in cloud-native environments. With the help of Hera and Couler, two Python SDKs for Argo Workflows, building and submitting workflows has never been easier.
 
-Hera abstracts away technical details, providing a consistent set of concepts and terminology, making complex workflows accessible to a wider audience. Couler, on the other hand, offers a unified interface for constructing and managing workflows on various workflow engines, including Argo Workflows, Tekton Pipelines, and Apache Airflow. Its extensibility, automatic optimizations, and reusable steps make it a powerful tool for streamlining the workflow creation process.
+Hera abstracts away technical details by providing a simple application programming interface, providing a consistent set of concepts and terminology, making complex workflows accessible to a wider audience. Couler, on the other hand, offers a unified application programming interface for constructing and managing workflows on various workflow engines, including Argo Workflows, Tekton Pipelines, and Apache Airflow. Its extensibility, automatic optimizations, and reusable steps make it a powerful tool for streamlining the workflow creation process.
 
 Explore our collection of Jupyter Notebooks and get inspired to build and manage your own complex workflows with ease!
 
@@ -14,13 +14,13 @@ Explore our collection of Jupyter Notebooks and get inspired to build and manage
 
 Hera is a Python software development kit (SDK) for Argo Workflows. Argo Workflows is a tool used for orchestrating and managing complex workflows in cloud-native environments.
 
-Hera aims to simplify the process of building and submitting workflows by abstracting away many of the technical details involved. It also uses a consistent set of terminology and concepts that align with Argo Workflows, making it easier for users to learn and use both tools together. Essentially, Hera is a tool designed to make the creation and management of complex workflows more accessible to a wider audience.
+Hera aims to simplify the process of building and submitting workflows by abstracting away many of the technical details through a simple application programming interface. It also uses a consistent set of terminology and concepts that align with Argo Workflows, making it easier for users to learn and use both tools together. Essentially, Hera is a tool designed to make the creation and management of complex workflows more accessible to a wider audience.
 
 ### Couler
 
-Couler provides a unified interface for constructing and managing workflows on different workflow engines, such as Argo Workflows, Tekton Pipelines, and Apache Airflow.
+Couler provides a unified application programming interface for constructing and managing workflows on different workflow engines, such as Argo Workflows, Tekton Pipelines, and Apache Airflow.
 
-While there are many different workflow engines available, they can vary in terms of programming experience required and level of abstraction, which can make some difficult to work with. Couler, on the other hand, provides a simple, unified interface for defining workflows using an imperative programming style. It also automatically constructs directed acyclic graphs (DAGs) for the workflows, which can help to simplify the process of creating and managing them.
+While there are many different workflow engines available, they can vary in terms of programming experience required and level of abstraction, which can make some difficult to work with. Couler, on the other hand, provides a simple, unified application programming interface for defining workflows using an imperative programming style. It also automatically constructs directed acyclic graphs (DAGs) for the workflows, which can help to simplify the process of creating and managing them.
 
 Couler is designed to be extensible, meaning it can work with various different workflow engines. It also includes reusable steps for tasks like distributed training of machine learning models, which can help to increase efficiency. Finally, Couler includes automatic workflow and resource optimizations, which can further improve efficiency and streamline the workflow creation process.
 
