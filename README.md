@@ -1,6 +1,6 @@
 # Example Argo Workflows Jupyter Notebooks
 
-_ Use these notebooks to get started with simple APIs for Argo Workflows_
+_Use these notebooks to get started with simple APIs for Argo Workflows_
 
 ## Introduction
 
