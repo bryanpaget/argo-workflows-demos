@@ -10,14 +10,6 @@ Hera abstracts away technical details, providing a consistent set of concepts an
 
 Explore our collection of Jupyter Notebooks and get inspired to build and manage your own complex workflows with ease!
 
-#### Container Repository Warning
-
-Due to security concerns, you can only use containers from the following repositories:
-
-```python
-ALLOWED_CONTAINER_REPOS = ["jfrog.aaw.cloud.statcan.ca/aaw-user-docker/", "k8scc01covidacr.azurecr.io/", "k8scc01covidacrdev.azurecr.io/", "gcr.io/ml-pipeline/frontend:", "gcr.io/ml-pipeline/visualization-server:", "gcr.io/ml-pipeline/kfp-launcher:", "gcr.io/kfserving/sklearnserver", "gcr.io/kfserving/storage-initializer:", "gcr.io/knative-releases/knative.dev/serving", "seldonio/", "docker.io/seldonio/", "docker.io/istio/proxyv2:", "docker.io/bitnami/postgresql:", "gitea/gitea:", "vault:", "hashicorp/vault:", "argoproj/argosay:", "quay.io/argoproj/argoexec:", "siscc/", "docker.io/andrewgaul/s3proxy:", "docker.io/nginxinc/nginx-unprivileged:", "trinodb/trino:", "bitsondatadev/hive-metastore:"]
-```
-
 ### Hera 
 
 Hera is a Python software development kit (SDK) for Argo Workflows. Argo Workflows is a tool used for orchestrating and managing complex workflows in cloud-native environments.
@@ -155,3 +147,10 @@ Regardless of which workflow interface you choose to use, the job is submitted a
 ![image](https://user-images.githubusercontent.com/8212170/221681210-016dccbf-eb07-4977-b7ff-a3f1643257e3.png)
 ![image](https://user-images.githubusercontent.com/8212170/221681409-4dd1e723-eff4-4e9a-aed9-955ce1b61efb.png)
 
+## Container Repository Warning
+
+Due to security concerns, you can only use containers from the following repositories:
+
+```python
+ALLOWED_CONTAINER_REPOS = ["jfrog.aaw.cloud.statcan.ca/aaw-user-docker/", "k8scc01covidacr.azurecr.io/", "k8scc01covidacrdev.azurecr.io/", "gcr.io/ml-pipeline/frontend:", "gcr.io/ml-pipeline/visualization-server:", "gcr.io/ml-pipeline/kfp-launcher:", "gcr.io/kfserving/sklearnserver", "gcr.io/kfserving/storage-initializer:", "gcr.io/knative-releases/knative.dev/serving", "seldonio/", "docker.io/seldonio/", "docker.io/istio/proxyv2:", "docker.io/bitnami/postgresql:", "gitea/gitea:", "vault:", "hashicorp/vault:", "argoproj/argosay:", "quay.io/argoproj/argoexec:", "siscc/", "docker.io/andrewgaul/s3proxy:", "docker.io/nginxinc/nginx-unprivileged:", "trinodb/trino:", "bitsondatadev/hive-metastore:"]
+```
