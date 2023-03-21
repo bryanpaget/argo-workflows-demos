@@ -41,11 +41,15 @@ Next import Hera and give it your credentials:
 
 ```python
 import hera
+import os
+
+NAMESPACE = os.environ("NB_NAMESPACE") # "<your-kubeflow-namespace>"
+ARGO_INSTANCE = "https://argo-workflows.aaw-dev.cloud.statcan.ca:443" # should remove -dev before release
 
 hera.global_config.GlobalConfig.token = "<your-argo-workflows-token>"
-hera.global_config.GlobalConfig.host = "https://argo-workflows.aaw-dev.cloud.statcan.ca:443"
-hera.global_config.GlobalConfig.namespace = "<your-kubeflow-namespace>"
-hera.global_config.GlobalConfig.service_account_name = "<your-kubeflow-profile>"
+hera.global_config.GlobalConfig.host = ARGO_INSTANCE
+hera.global_config.GlobalConfig.namespace = NAMESPACE # "<your-kubeflow-namespace>"
+hera.global_config.GlobalConfig.service_account_name = NAMESPACE # "<your-kubeflow-profile>"
 ```
 
 From here you should be able to run an example workflow:
@@ -88,20 +92,21 @@ If you are on the `aaw-dev` cluster you'll need to first specify the correct URL
 
 ```bash
 !pip config --user set global.index-url https://jfrog.aaw.cloud.statcan.ca/artifactory/api/pypi/pypi-remote/simple
-!python3 -m pip install git+https://github.com/couler-proj/couler --ignore-installed
+!python3 -m pip install git+https://github.com/couler-proj/couler
 ```
 
-Then import Couler as below and provide your namespace:
+Then import Couler as below:
 
 ```python
 import json
 import random
+import os
 
 import couler.argo as couler
 from couler.argo_submitter import ArgoSubmitter
 
 
-NAMESPACE = "<your-kubeflow-namespace>"
+NAMESPACE = os.environ("NB_NAMESPACE") #"<your-kubeflow-namespace>"
 ```
 
 Then you should be able to run an example workflow:
@@ -142,14 +147,14 @@ print(json.dumps(result, indent=2))
 
 ## Viewing Your Workflow
 
-Regardless of which workflow interface you choose to use, the job is submitted as an Argo Workflows workflow. Your workflows can be viewed from the Argo Workflows  web interface located at https://argo-workflows.aaw-dev.cloud.statcan.ca/.
+Regardless of which workflow interface you choose to use, the job is submitted as an Argo Workflows workflow. Your workflows can be viewed from the Argo Workflows web interface located at https://argo-workflows.aaw-dev.cloud.statcan.ca/.
 
 ![image](https://user-images.githubusercontent.com/8212170/221681210-016dccbf-eb07-4977-b7ff-a3f1643257e3.png)
 ![image](https://user-images.githubusercontent.com/8212170/221681409-4dd1e723-eff4-4e9a-aed9-955ce1b61efb.png)
 
 ## Container Repository Warning
 
-Due to security concerns, you can only use containers from the following repositories:
+For security purposes, only the following containers repositories are reachable:
 
 ```python
 ALLOWED_CONTAINER_REPOS = ["jfrog.aaw.cloud.statcan.ca/aaw-user-docker/", "k8scc01covidacr.azurecr.io/", "k8scc01covidacrdev.azurecr.io/", "gcr.io/ml-pipeline/frontend:", "gcr.io/ml-pipeline/visualization-server:", "gcr.io/ml-pipeline/kfp-launcher:", "gcr.io/kfserving/sklearnserver", "gcr.io/kfserving/storage-initializer:", "gcr.io/knative-releases/knative.dev/serving", "seldonio/", "docker.io/seldonio/", "docker.io/istio/proxyv2:", "docker.io/bitnami/postgresql:", "gitea/gitea:", "vault:", "hashicorp/vault:", "argoproj/argosay:", "quay.io/argoproj/argoexec:", "siscc/", "docker.io/andrewgaul/s3proxy:", "docker.io/nginxinc/nginx-unprivileged:", "trinodb/trino:", "bitsondatadev/hive-metastore:"]
